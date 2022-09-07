@@ -11,6 +11,8 @@ import RxSwift
 
 class MainViewController: UIViewController {
     
+    var viewModel: MainViewModel!
+    
     @IBOutlet weak var kolodaView: KolodaView!
     
     var images = [UIImage]()
@@ -21,26 +23,34 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel = MainViewModel(userRepository: userRepository)
+        
         userRepository.getUsers().subscribe(onNext: { userResponse in
             print(userResponse)
         }).disposed(by: disposeBag)
-        
-        images.append(UIImage(named: "avatar")!)
-        images.append(UIImage(named: "avatar2")!)
-        images.append(UIImage(named: "avatar3")!)
-        
-        loadCardControllers()
                 
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        
+        bindUI()
     }
     
     func loadCardControllers() {
-        images.forEach { _ in
+        let users = viewModel.people.value ?? []
+        users.forEach { user in
             let controller = storyboard?.instantiateViewController(identifier: "CardViewController") as! CardViewController
             addChild(controller)
             cardControllers.append(controller)
         }
+    }
+    
+    func bindUI() {
+      viewModel.people.asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.loadCardControllers()
+                self?.kolodaView.reloadData()
+            })
+        .disposed(by: disposeBag)
     }
 
 }
@@ -54,12 +64,12 @@ extension MainViewController: KolodaViewDelegate {
 extension MainViewController: KolodaViewDataSource {
 
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return images.count
+        return viewModel.people.value?.count ?? 0
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let controller = cardControllers[index]
-        controller.image = images[index]
+        controller.update(with: viewModel.people.value?[index] ?? nil)
         return controller.view
     }
 }

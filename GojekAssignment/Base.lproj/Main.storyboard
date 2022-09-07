@@ -56,6 +56,10 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woJ-UZ-XiH">
+                                        <rect key="frame" x="123" y="16" width="168" height="168"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wFq-n1-3LH">
                                         <rect key="frame" x="127" y="20" width="160" height="160"/>
                                         <constraints>
@@ -97,13 +101,17 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YBd-cz-i9O" secondAttribute="bottom" constant="20" id="5eW-ub-dTj"/>
+                                    <constraint firstItem="woJ-UZ-XiH" firstAttribute="trailing" secondItem="wFq-n1-3LH" secondAttribute="trailing" constant="4" id="6eK-6f-fpW"/>
+                                    <constraint firstItem="woJ-UZ-XiH" firstAttribute="bottom" secondItem="wFq-n1-3LH" secondAttribute="bottom" constant="4" id="Idu-4a-GeI"/>
                                     <constraint firstAttribute="height" secondItem="xey-Td-TXI" secondAttribute="width" multiplier="1.2" id="J4c-8D-rgO"/>
                                     <constraint firstItem="JEC-Jd-9Bc" firstAttribute="top" secondItem="ogo-CR-2kv" secondAttribute="bottom" constant="12" id="MVv-Nu-Bxo"/>
                                     <constraint firstItem="ogo-CR-2kv" firstAttribute="centerX" secondItem="xey-Td-TXI" secondAttribute="centerX" id="RjL-Ox-E0o"/>
                                     <constraint firstItem="JEC-Jd-9Bc" firstAttribute="centerX" secondItem="xey-Td-TXI" secondAttribute="centerX" id="RuC-ii-ga5"/>
                                     <constraint firstAttribute="trailing" secondItem="YBd-cz-i9O" secondAttribute="trailing" id="YEZ-VI-sLe"/>
+                                    <constraint firstItem="woJ-UZ-XiH" firstAttribute="leading" secondItem="wFq-n1-3LH" secondAttribute="leading" constant="-4" id="YhJ-5Q-Y6i"/>
                                     <constraint firstItem="YBd-cz-i9O" firstAttribute="leading" secondItem="xey-Td-TXI" secondAttribute="leading" id="rP6-Wv-65q"/>
                                     <constraint firstItem="wFq-n1-3LH" firstAttribute="top" secondItem="xey-Td-TXI" secondAttribute="top" constant="20" id="tLS-Nn-lJL"/>
+                                    <constraint firstItem="woJ-UZ-XiH" firstAttribute="top" secondItem="wFq-n1-3LH" secondAttribute="top" constant="-4" id="tuX-Bo-TEc"/>
                                     <constraint firstItem="ogo-CR-2kv" firstAttribute="top" secondItem="wFq-n1-3LH" secondAttribute="bottom" constant="24" id="wQ1-AA-O1a"/>
                                     <constraint firstItem="wFq-n1-3LH" firstAttribute="centerX" secondItem="xey-Td-TXI" secondAttribute="centerX" id="ziU-z4-HI6"/>
                                 </constraints>
@@ -118,7 +126,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="avatar" destination="wFq-n1-3LH" id="Yrg-7e-bNx"/>
+                        <outlet property="nameLabel" destination="JEC-Jd-9Bc" id="jvi-4t-BTE"/>
+                        <outlet property="photo" destination="wFq-n1-3LH" id="v6w-Vi-x4m"/>
+                        <outlet property="roundedView" destination="woJ-UZ-XiH" id="MSn-Fz-x9a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JKM-VI-jbx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

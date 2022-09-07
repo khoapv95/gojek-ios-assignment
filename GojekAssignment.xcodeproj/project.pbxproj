@@ -11,6 +11,9 @@
 		4C7B330028C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */; };
 		4C7B330228C64E9E00229AB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B330128C64E9E00229AB2 /* UserRepository.swift */; };
 		4C7B330428C64EDA00229AB2 /* GojekUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B330328C64EDA00229AB2 /* GojekUserRepository.swift */; };
+		4CA3A97928C74EEF001D0308 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3A97828C74EEF001D0308 /* MainViewModel.swift */; };
+		4CA3A97C28C77382001D0308 /* ImageView+setImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3A97B28C77382001D0308 /* ImageView+setImage.swift */; };
+		4CA3A97E28C77454001D0308 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA3A97D28C77454001D0308 /* Photo.swift */; };
 		4CA7BEAA28C6435800100CDF /* Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7BEA928C6435800100CDF /* Name.swift */; };
 		4CA7BEAC28C643B200100CDF /* DateOfBirth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7BEAB28C643B200100CDF /* DateOfBirth.swift */; };
 		4CA7BEAE28C643C300100CDF /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7BEAD28C643C300100CDF /* Location.swift */; };
@@ -33,6 +36,9 @@
 		4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekCloudUserRemoteAPI.swift; sourceTree = "<group>"; };
 		4C7B330128C64E9E00229AB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		4C7B330328C64EDA00229AB2 /* GojekUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekUserRepository.swift; sourceTree = "<group>"; };
+		4CA3A97828C74EEF001D0308 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		4CA3A97B28C77382001D0308 /* ImageView+setImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+setImage.swift"; sourceTree = "<group>"; };
+		4CA3A97D28C77454001D0308 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		4CA7BEA928C6435800100CDF /* Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Name.swift; sourceTree = "<group>"; };
 		4CA7BEAB28C643B200100CDF /* DateOfBirth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateOfBirth.swift; sourceTree = "<group>"; };
 		4CA7BEAD28C643C300100CDF /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -84,6 +90,22 @@
 				4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */,
 			);
 			path = Implementations;
+			sourceTree = "<group>";
+		};
+		4CA3A97728C74ECD001D0308 /* UILayer */ = {
+			isa = PBXGroup;
+			children = (
+				4CA3A97828C74EEF001D0308 /* MainViewModel.swift */,
+			);
+			path = UILayer;
+			sourceTree = "<group>";
+		};
+		4CA3A97A28C7736C001D0308 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4CA3A97B28C77382001D0308 /* ImageView+setImage.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		4CA7BEB128C6451900100CDF /* Remote */ = {
@@ -139,6 +161,7 @@
 				4CA7BEAB28C643B200100CDF /* DateOfBirth.swift */,
 				4CA7BEAD28C643C300100CDF /* Location.swift */,
 				4CA7BEAF28C643D000100CDF /* Street.swift */,
+				4CA3A97D28C77454001D0308 /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,6 +187,8 @@
 		4CCFC33928C485BB005BE7FB /* GojekAssignment */ = {
 			isa = PBXGroup;
 			children = (
+				4CA3A97A28C7736C001D0308 /* Extensions */,
+				4CA3A97728C74ECD001D0308 /* UILayer */,
 				4CBF282C28C603A400FC3F92 /* DataLayer */,
 				4CBF282B28C5E91E00FC3F92 /* iOSApp */,
 				4CCFC33A28C485BB005BE7FB /* AppDelegate.swift */,
@@ -306,11 +331,14 @@
 				4CA7BEAC28C643B200100CDF /* DateOfBirth.swift in Sources */,
 				4CCFC33F28C485BB005BE7FB /* ViewController.swift in Sources */,
 				4CCFC33B28C485BB005BE7FB /* AppDelegate.swift in Sources */,
+				4CA3A97928C74EEF001D0308 /* MainViewModel.swift in Sources */,
 				4CBF283028C6073100FC3F92 /* UserProfile.swift in Sources */,
 				4C7B330028C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift in Sources */,
 				4CA7BEAE28C643C300100CDF /* Location.swift in Sources */,
 				4CA7BEB428C6466E00100CDF /* UserRemoteAPI.swift in Sources */,
+				4CA3A97E28C77454001D0308 /* Photo.swift in Sources */,
 				4CCFC33D28C485BB005BE7FB /* SceneDelegate.swift in Sources */,
+				4CA3A97C28C77382001D0308 /* ImageView+setImage.swift in Sources */,
 				4C60941128C4EC35001C0502 /* CardViewController.swift in Sources */,
 				4CA7BEAA28C6435800100CDF /* Name.swift in Sources */,
 				4CA7BEB028C643D000100CDF /* Street.swift in Sources */,
