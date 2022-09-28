@@ -80,35 +80,57 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="103.5" height="46"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="user"/>
+                                                <connections>
+                                                    <action selector="didTapButton:" destination="thG-fv-yg9" eventType="touchUpInside" id="dl6-HR-XI0"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fX8-xN-Lg0">
                                                 <rect key="frame" x="103.5" y="0.0" width="103.5" height="46"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="calendar"/>
+                                                <connections>
+                                                    <action selector="didTapButton:" destination="thG-fv-yg9" eventType="touchUpInside" id="NTj-7u-LgQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3E-Sm-irk">
                                                 <rect key="frame" x="207" y="0.0" width="103.5" height="46"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="locator"/>
+                                                <connections>
+                                                    <action selector="didTapButton:" destination="thG-fv-yg9" eventType="touchUpInside" id="bfv-0j-z4z"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5kO-5U-zJJ">
                                                 <rect key="frame" x="310.5" y="0.0" width="103.5" height="46"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="call"/>
+                                                <connections>
+                                                    <action selector="didTapButton:" destination="thG-fv-yg9" eventType="touchUpInside" id="pT5-sO-8Yn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oEQ-uy-D1p">
+                                        <rect key="frame" x="0.0" y="427" width="103.5" height="4"/>
+                                        <color key="backgroundColor" red="0.46274509800000002" green="0.72549019609999998" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="KHs-zj-Sef"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="YBd-cz-i9O" secondAttribute="bottom" constant="20" id="5eW-ub-dTj"/>
                                     <constraint firstItem="woJ-UZ-XiH" firstAttribute="trailing" secondItem="wFq-n1-3LH" secondAttribute="trailing" constant="4" id="6eK-6f-fpW"/>
+                                    <constraint firstItem="YBd-cz-i9O" firstAttribute="top" secondItem="oEQ-uy-D1p" secondAttribute="bottom" id="A4K-BV-ic7"/>
                                     <constraint firstItem="woJ-UZ-XiH" firstAttribute="bottom" secondItem="wFq-n1-3LH" secondAttribute="bottom" constant="4" id="Idu-4a-GeI"/>
                                     <constraint firstAttribute="height" secondItem="xey-Td-TXI" secondAttribute="width" multiplier="1.2" id="J4c-8D-rgO"/>
+                                    <constraint firstItem="oEQ-uy-D1p" firstAttribute="leading" secondItem="xey-Td-TXI" secondAttribute="leading" id="Kjd-EN-hia"/>
                                     <constraint firstItem="JEC-Jd-9Bc" firstAttribute="top" secondItem="ogo-CR-2kv" secondAttribute="bottom" constant="12" id="MVv-Nu-Bxo"/>
                                     <constraint firstItem="ogo-CR-2kv" firstAttribute="centerX" secondItem="xey-Td-TXI" secondAttribute="centerX" id="RjL-Ox-E0o"/>
                                     <constraint firstItem="JEC-Jd-9Bc" firstAttribute="centerX" secondItem="xey-Td-TXI" secondAttribute="centerX" id="RuC-ii-ga5"/>
                                     <constraint firstAttribute="trailing" secondItem="YBd-cz-i9O" secondAttribute="trailing" id="YEZ-VI-sLe"/>
                                     <constraint firstItem="woJ-UZ-XiH" firstAttribute="leading" secondItem="wFq-n1-3LH" secondAttribute="leading" constant="-4" id="YhJ-5Q-Y6i"/>
+                                    <constraint firstItem="oEQ-uy-D1p" firstAttribute="width" secondItem="xey-Td-TXI" secondAttribute="width" multiplier="1/4" id="lqa-KK-S6G"/>
                                     <constraint firstItem="YBd-cz-i9O" firstAttribute="leading" secondItem="xey-Td-TXI" secondAttribute="leading" id="rP6-Wv-65q"/>
                                     <constraint firstItem="wFq-n1-3LH" firstAttribute="top" secondItem="xey-Td-TXI" secondAttribute="top" constant="20" id="tLS-Nn-lJL"/>
                                     <constraint firstItem="woJ-UZ-XiH" firstAttribute="top" secondItem="wFq-n1-3LH" secondAttribute="top" constant="-4" id="tuX-Bo-TEc"/>
@@ -126,8 +148,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dobButton" destination="fX8-xN-Lg0" id="nfG-oI-MjE"/>
+                        <outlet property="horizontalLineLeadingConstraint" destination="Kjd-EN-hia" id="uRd-hI-WOG"/>
+                        <outlet property="horizontalLineView" destination="oEQ-uy-D1p" id="Qt3-qD-Cny"/>
+                        <outlet property="locationButton" destination="H3E-Sm-irk" id="PFc-cu-nZh"/>
+                        <outlet property="mobileNumberButton" destination="5kO-5U-zJJ" id="drn-R1-PDQ"/>
                         <outlet property="nameLabel" destination="JEC-Jd-9Bc" id="jvi-4t-BTE"/>
                         <outlet property="photo" destination="wFq-n1-3LH" id="v6w-Vi-x4m"/>
+                        <outlet property="photoButton" destination="GKD-XB-sTo" id="qYn-sN-Te7"/>
                         <outlet property="roundedView" destination="woJ-UZ-XiH" id="MSn-Fz-x9a"/>
                     </connections>
                 </viewController>

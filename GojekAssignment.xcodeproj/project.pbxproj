@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C35C2F528CDE05E00C458BC /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C35C2F428CDE05E00C458BC /* CardViewModel.swift */; };
 		4C60941128C4EC35001C0502 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60941028C4EC35001C0502 /* CardViewController.swift */; };
 		4C7B330028C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */; };
 		4C7B330228C64E9E00229AB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B330128C64E9E00229AB2 /* UserRepository.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0429C6179EF3218B7F05546A /* Pods_GojekAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GojekAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C35C2F428CDE05E00C458BC /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		4C60941028C4EC35001C0502 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekCloudUserRemoteAPI.swift; sourceTree = "<group>"; };
 		4C7B330128C64E9E00229AB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				4CA3A97828C74EEF001D0308 /* MainViewModel.swift */,
+				4C35C2F428CDE05E00C458BC /* CardViewModel.swift */,
 			);
 			path = UILayer;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 				4CA3A97928C74EEF001D0308 /* MainViewModel.swift in Sources */,
 				4CBF283028C6073100FC3F92 /* UserProfile.swift in Sources */,
 				4C7B330028C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift in Sources */,
+				4C35C2F528CDE05E00C458BC /* CardViewModel.swift in Sources */,
 				4CA7BEAE28C643C300100CDF /* Location.swift in Sources */,
 				4CA7BEB428C6466E00100CDF /* UserRemoteAPI.swift in Sources */,
 				4CA3A97E28C77454001D0308 /* Photo.swift in Sources */,
