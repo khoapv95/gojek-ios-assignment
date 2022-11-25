@@ -24,7 +24,9 @@ public class CardViewModel {
     let inputSubject = PublishSubject<(Int, CGFloat)>()
     
     // MARK: - Output
-    let outputSubject = PublishSubject<CGFloat>()
+    let outputSubject = PublishSubject<(String, CGFloat, Int)>()
+    
+    var user: User!
     
     init() {
         bindInput()
@@ -32,28 +34,33 @@ public class CardViewModel {
     
     private func bindInput() {
         inputSubject.subscribe(onNext: { [weak self] (tag, widthOfPerButton) in
-            guard let type = CardButtonType(rawValue: tag) else {
+            guard let strongSelf = self, let type = CardButtonType(rawValue: tag) else {
                 return
             }
             
+            let text: String
             let constant: CGFloat
             
             switch type {
             case .photo:
                 print("User tapped")
+                text = "\(strongSelf.user.name.title) \(strongSelf.user.name.first) \(strongSelf.user.name.last)"
                 constant = 0 * widthOfPerButton
             case .dob:
                 print("DOB tapped")
+                text = strongSelf.user.dob.date
                 constant = 1 * widthOfPerButton
             case .location:
                 print("Location tapped")
+                text = strongSelf.user.location.country
                 constant = 2 * widthOfPerButton
             case .mobileNumber:
                 print("Mobile number tapped")
+                text = strongSelf.user.mobileNumber
                 constant = 3 * widthOfPerButton
             }
             
-            self?.outputSubject.onNext(constant)
+            self?.outputSubject.onNext((text, constant, tag))
         })
         .disposed(by: disposeBag)
     }

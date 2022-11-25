@@ -19,7 +19,8 @@ class CardViewController: UIViewController {
     @IBOutlet weak var dobButton: UIButton!
     @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var mobileNumberButton: UIButton!
-    
+    @IBOutlet weak var stackView: UIStackView!
+
     @IBOutlet weak var horizontalLineLeadingConstraint: NSLayoutConstraint!
     
     let disposeBag = DisposeBag()
@@ -38,24 +39,39 @@ class CardViewController: UIViewController {
         photo.clipsToBounds = true
         
         let mint = UIColor(red: 148/255, green: 201/255, blue: 115/255, alpha: 1)
-        photoButton.setImage(tintedImage("user", withTintColor: mint), for: .normal)
+        photoButton.setImage(UIImage(named: "user")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        photoButton.tintColor = mint
         photoButton.tag = 0
-        dobButton.setImage(tintedImage("calendar", withTintColor: .lightGray), for: .normal)
+        dobButton.setImage(UIImage(named: "calendar")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        dobButton.tintColor = .lightGray
         dobButton.tag = 1
-        locationButton.setImage(tintedImage("locator", withTintColor: .lightGray), for: .normal)
+        locationButton.setImage(UIImage(named: "locator")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        locationButton.tintColor = .lightGray
         locationButton.tag = 2
-        mobileNumberButton.setImage(tintedImage("call", withTintColor: .lightGray), for: .normal)
+        mobileNumberButton.setImage(UIImage(named: "call")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        mobileNumberButton.tintColor = .lightGray
         mobileNumberButton.tag = 3
         
         bindUI()
     }
     
     func bindUI() {
-        viewModel.outputSubject.asDriver(onErrorJustReturn: 0)
-            .drive(onNext: { [weak self] constant in
-                self?.horizontalLineLeadingConstraint.constant = constant
+        viewModel.outputSubject.asDriver(onErrorJustReturn: ("", 0, 0))
+            .drive(onNext: { [weak self] (text, constant, tag) in
+                guard let strongSelf = self else { return }
+                strongSelf.nameLabel.text = text
+                strongSelf.horizontalLineLeadingConstraint.constant = constant
+                for subview in strongSelf.stackView.arrangedSubviews {
+                    guard let button = subview as? UIButton else { return }
+                    if button.tag == tag {
+                        let mint = UIColor(red: 148/255, green: 201/255, blue: 115/255, alpha: 1)
+                        button.tintColor = mint
+                    } else {
+                        button.tintColor = .lightGray
+                    }
+                }
                 UIView.animate(withDuration: 0.2) {
-                    self?.view.layoutIfNeeded()
+                    strongSelf.view.layoutIfNeeded()
                 }
             })
         .disposed(by: disposeBag)
@@ -65,6 +81,7 @@ class CardViewController: UIViewController {
         guard let user = user else {
             return
         }
+        viewModel.user = user
         DispatchQueue.main.async {
             self.photo.setImage(with: URL(string: user.photo.large))
             self.nameLabel.text = "\(user.name.title) \(user.name.first) \(user.name.last)"
@@ -72,7 +89,7 @@ class CardViewController: UIViewController {
     }
     
     private func tintedImage(_ named: String, withTintColor color: UIColor) -> UIImage? {
-        return UIImage(named: named)?.withTintColor(color, renderingMode: .alwaysOriginal)
+        return UIImage(named: named)?.withRenderingMode(.alwaysTemplate)
     }
 
     @IBAction func didTapButton(_ sender: UIButton) {
