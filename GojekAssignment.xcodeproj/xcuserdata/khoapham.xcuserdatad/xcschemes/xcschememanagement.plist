@@ -7,7 +7,20 @@
 		<key>GojekAssignment.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>7</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>4CBEE0072938BCBC00630B43</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4CCFC33628C485BB005BE7FB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

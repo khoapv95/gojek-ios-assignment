@@ -77,14 +77,15 @@ class CardViewController: UIViewController {
         .disposed(by: disposeBag)
     }
     
-    func update(with user: User?) {
-        guard let user = user else {
-            return
-        }
+    func update(with user: PersonResponse) {
         viewModel.user = user
         DispatchQueue.main.async {
-            self.photo.setImage(with: URL(string: user.photo.large))
-            self.nameLabel.text = "\(user.name.title) \(user.name.first) \(user.name.last)"
+            if let imageData = user.photoData {
+                self.photo.image = UIImage(data: imageData)
+            } else {
+                self.photo.setImage(with: URL(string: user.photoURLString ?? ""))
+            }
+            self.nameLabel.text = "\(user.title ?? "") \(user.first ?? "") \(user.last ?? "")"
         }
     }
     

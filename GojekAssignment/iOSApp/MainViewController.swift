@@ -8,31 +8,36 @@
 import UIKit
 import Koloda
 import RxSwift
+import CoreData
 
 class MainViewController: UIViewController {
     
+    // MARK: - Properties
     var viewModel: MainViewModel!
-    
-    @IBOutlet weak var kolodaView: KolodaView!
-    
+    var managedContext: NSManagedObjectContext!
     var images = [UIImage]()
     var cardControllers = [CardViewController]()
-    let userRepository = GojekUserRepository(remoteAPI: GojekCloudUserRemoteAPI())
+    let userRepository = GojekUserRepository(remoteAPI: GojekCloudUserRemoteAPI(),
+                                             datastore: UserDataStoreInDisk())
     let disposeBag = DisposeBag()
+    
+    @IBOutlet weak var kolodaView: KolodaView!
+    @IBOutlet weak var favoriteImgv: UIImageView!
 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel = MainViewModel(userRepository: userRepository)
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        managedContext = appDelegate?.persistentContainer.viewContext
         
-        userRepository.getUsers().subscribe(onNext: { userResponse in
-            print(userResponse)
-        }).disposed(by: disposeBag)
+        viewModel = MainViewModel(userRepository: userRepository)
                 
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
         bindUI()
+        favoriteImgv.isHidden = true
     }
     
     func loadCardControllers() {
@@ -68,8 +73,18 @@ extension MainViewController: KolodaViewDataSource {
     }
 
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        guard !cardControllers.isEmpty, let person = viewModel.people.value?[index] else { return UIView() }
         let controller = cardControllers[index]
-        controller.update(with: viewModel.people.value?[index] ?? nil)
+        favoriteImgv.isHidden = !person.isFavorite
+        controller.update(with: person)
         return controller.view
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        guard direction == .right, let user = viewModel.people.value?[index] else { return }
+        let controller = cardControllers[index]
+        var userToSave = user
+        userToSave.photoData = controller.photo.image?.pngData()
+        viewModel.userRepository.saveUserToDisk(userToSave)
     }
 }

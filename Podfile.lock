@@ -2,6 +2,7 @@ PODS:
   - Koloda (5.0.1):
     - pop (~> 1.0)
   - pop (1.0.12)
+  - ReachabilitySwift (5.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - Koloda
+  - ReachabilitySwift
   - RxCocoa (= 6.5.0)
   - RxSwift (= 6.5.0)
 
@@ -18,6 +20,7 @@ SPEC REPOS:
   trunk:
     - Koloda
     - pop
+    - ReachabilitySwift
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -25,10 +28,11 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Koloda: d07b9199a383abc5898b62aa945a599f5e7c0c4b
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
 
-PODFILE CHECKSUM: da2bf1503b1046b759a63ffb8ea54d864d60c136
+PODFILE CHECKSUM: eaae7f26c9d45b696a947249ed8c634eed40134f
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

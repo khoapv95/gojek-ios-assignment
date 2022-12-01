@@ -10,5 +10,7 @@ import RxSwift
 
 public protocol UserRepository {
   
-  func getUsers() -> Observable<UserResponse>
+    func getUsers() -> Observable<[PersonResponse]>
+    func getUsersOnDisk() -> Observable<[PersonResponse]>
+    func saveUserToDisk(_ user: PersonResponse)
 }

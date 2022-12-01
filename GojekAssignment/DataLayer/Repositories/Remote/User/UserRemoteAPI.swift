@@ -10,7 +10,7 @@ import RxSwift
 
 public protocol UserRemoteAPI {
 
-  func getUsers() -> Observable<UserResponse>
+  func getUsers() -> Observable<[PersonResponse]>
 }
 
 enum RemoteAPIError: Error {

@@ -26,7 +26,7 @@ public class CardViewModel {
     // MARK: - Output
     let outputSubject = PublishSubject<(String, CGFloat, Int)>()
     
-    var user: User!
+    var user: PersonResponse!
     
     init() {
         bindInput()
@@ -43,20 +43,16 @@ public class CardViewModel {
             
             switch type {
             case .photo:
-                print("User tapped")
-                text = "\(strongSelf.user.name.title) \(strongSelf.user.name.first) \(strongSelf.user.name.last)"
+                text = "\(strongSelf.user.title ?? "") \(strongSelf.user.first ?? "") \(strongSelf.user.last ?? "")"
                 constant = 0 * widthOfPerButton
             case .dob:
-                print("DOB tapped")
-                text = strongSelf.user.dob.date
+                text = strongSelf.user.dob ?? ""
                 constant = 1 * widthOfPerButton
             case .location:
-                print("Location tapped")
-                text = strongSelf.user.location.country
+                text = strongSelf.user.country ?? ""
                 constant = 2 * widthOfPerButton
             case .mobileNumber:
-                print("Mobile number tapped")
-                text = strongSelf.user.mobileNumber
+                text = strongSelf.user.mobileNumber ?? ""
                 constant = 3 * widthOfPerButton
             }
             
