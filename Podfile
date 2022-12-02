@@ -2,11 +2,21 @@
 # platform :ios, '9.0'
 use_frameworks!
 
+def common_pods
+  pod "Koloda"
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  pod 'ReachabilitySwift'
+end
+
 target 'GojekAssignment' do
 
-    pod "Koloda"
-    pod 'RxSwift', '6.5.0'
-    pod 'RxCocoa', '6.5.0'
-    pod 'ReachabilitySwift'
+  common_pods
+    
+end
+
+target 'GojekAssignmentTests' do
+  
+  common_pods
     
 end

@@ -176,20 +176,20 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Koloda-iOS15.5/Koloda.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift-iOS15.5/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa-iOS15.5/RxCocoa.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxRelay-iOS15.5/RxRelay.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift-iOS15.5/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop-iOS15.5/pop.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/pop/pop.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/Koloda-iOS15.5/Koloda.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/ReachabilitySwift-iOS15.5/Reachability.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxCocoa-iOS15.5/RxCocoa.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxRelay-iOS15.5/RxRelay.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/RxSwift-iOS15.5/RxSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/pop-iOS15.5/pop.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

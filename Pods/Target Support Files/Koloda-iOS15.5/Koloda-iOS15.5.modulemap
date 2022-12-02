@@ -1,0 +1,6 @@
+framework module Koloda {
+  umbrella header "Koloda-iOS15.5-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -47,7 +47,7 @@ public class UserDataStoreInDisk: UserDataStore {
                 let records = try self.managedContext.fetch(request)
                 var results = [PersonResponse]()
                 for item in records {
-                    var person = PersonResponse()
+                    let person = PersonResponse()
                     person.title = item.title
                     person.first = item.first
                     person.last = item.last

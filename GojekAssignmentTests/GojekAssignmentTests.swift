@@ -6,30 +6,102 @@
 //
 
 import XCTest
+import RxSwift
+@testable import GojekAssignment
 
 final class GojekAssignmentTests: XCTestCase {
+    
+    let disposeBag = DisposeBag()
+    
+    let person = PersonResponse()
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        person.title = "Mr"
+        person.first = "James"
+        person.last = "Bond"
+        person.dob = "09/03/1995"
+        person.country = "England"
+        person.mobileNumber = "0123456789"
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testPhotoSection() {
+        let viewModel = CardViewModel()
+        viewModel.user = person
+        
+        var result = ""
+        var section = 0
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+        viewModel.outputSubject.asDriver(onErrorJustReturn: ("", 0, 0))
+            .drive(onNext: { (text, constant, tag) in
+                result = text
+                section = tag
+            })
+        .disposed(by: disposeBag)
+        
+        viewModel.inputSubject.onNext((0, 0))
+        
+        XCTAssertEqual(result, "Mr James Bond")
+        XCTAssertEqual(section, CardButtonType.photo.rawValue)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testDOBSection() {
+        let viewModel = CardViewModel()
+        viewModel.user = person
+        
+        var result = ""
+        var section = 0
+        
+        viewModel.outputSubject.asDriver(onErrorJustReturn: ("", 0, 0))
+            .drive(onNext: { (text, constant, tag) in
+                result = text
+                section = tag
+            })
+        .disposed(by: disposeBag)
+        
+        viewModel.inputSubject.onNext((1, 0))
+        
+        XCTAssertEqual(result, "09/03/1995")
+        XCTAssertEqual(section, CardButtonType.dob.rawValue)
+    }
+    
+    func testLocationSection() {
+        let viewModel = CardViewModel()
+        viewModel.user = person
+        
+        var result = ""
+        var section = 0
+        
+        viewModel.outputSubject.asDriver(onErrorJustReturn: ("", 0, 0))
+            .drive(onNext: { (text, constant, tag) in
+                result = text
+                section = tag
+            })
+        .disposed(by: disposeBag)
+        
+        viewModel.inputSubject.onNext((2, 0))
+        
+        XCTAssertEqual(result, "England")
+        XCTAssertEqual(section, CardButtonType.location.rawValue)
+    }
+    
+    func testMobileNumberSection() {
+        let viewModel = CardViewModel()
+        viewModel.user = person
+        
+        var result = ""
+        var section = 0
+        
+        viewModel.outputSubject.asDriver(onErrorJustReturn: ("", 0, 0))
+            .drive(onNext: { (text, constant, tag) in
+                result = text
+                section = tag
+            })
+        .disposed(by: disposeBag)
+        
+        viewModel.inputSubject.onNext((3, 0))
+        
+        XCTAssertEqual(result, "0123456789")
+        XCTAssertEqual(section, CardButtonType.mobileNumber.rawValue)
     }
 
 }

@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8A0A21E7D035C8E72BB575 /* Pods_GojekAssignmentTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27599F53C5443EEC0E87BE4C /* Pods_GojekAssignmentTests.framework */; };
 		4C09135F2935CA140012110A /* UserDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C09135E2935CA140012110A /* UserDataStore.swift */; };
 		4C1C470629347D9900F7828E /* GojekAssignment.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C470429347D9900F7828E /* GojekAssignment.xcdatamodeld */; };
 		4C1C4711293481A000F7828E /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C470F293481A000F7828E /* Person+CoreDataClass.swift */; };
 		4C1C4712293481A000F7828E /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1C4710293481A000F7828E /* Person+CoreDataProperties.swift */; };
 		4C35C2F528CDE05E00C458BC /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C35C2F428CDE05E00C458BC /* CardViewModel.swift */; };
+		4C496DBB2939BE8400C7DB41 /* GojekAppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C496DBA2939BE8400C7DB41 /* GojekAppDependencyContainer.swift */; };
 		4C60941128C4EC35001C0502 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60941028C4EC35001C0502 /* CardViewController.swift */; };
 		4C7B330028C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */; };
 		4C7B330228C64E9E00229AB2 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7B330128C64E9E00229AB2 /* UserRepository.swift */; };
@@ -47,12 +49,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02FFBBDC88043125D0DD004D /* Pods-GojekAssignmentTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GojekAssignmentTests.debug.xcconfig"; path = "Target Support Files/Pods-GojekAssignmentTests/Pods-GojekAssignmentTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0429C6179EF3218B7F05546A /* Pods_GojekAssignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GojekAssignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2506DCF8E16877803E2E8075 /* Pods-GojekAssignmentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GojekAssignmentTests.release.xcconfig"; path = "Target Support Files/Pods-GojekAssignmentTests/Pods-GojekAssignmentTests.release.xcconfig"; sourceTree = "<group>"; };
+		27599F53C5443EEC0E87BE4C /* Pods_GojekAssignmentTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GojekAssignmentTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C09135E2935CA140012110A /* UserDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataStore.swift; sourceTree = "<group>"; };
 		4C1C470529347D9900F7828E /* GojekAssignment.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GojekAssignment.xcdatamodel; sourceTree = "<group>"; };
 		4C1C470F293481A000F7828E /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		4C1C4710293481A000F7828E /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		4C35C2F428CDE05E00C458BC /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
+		4C496DBA2939BE8400C7DB41 /* GojekAppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekAppDependencyContainer.swift; sourceTree = "<group>"; };
 		4C60941028C4EC35001C0502 /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		4C7B32FF28C64B3200229AB2 /* GojekCloudUserRemoteAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GojekCloudUserRemoteAPI.swift; sourceTree = "<group>"; };
 		4C7B330128C64E9E00229AB2 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8A0A21E7D035C8E72BB575 /* Pods_GojekAssignmentTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +117,7 @@
 				4CA7BEB628C648DC00100CDF /* RxRelay.framework */,
 				4CA7BEB728C648DC00100CDF /* RxSwift.framework */,
 				0429C6179EF3218B7F05546A /* Pods_GojekAssignment.framework */,
+				27599F53C5443EEC0E87BE4C /* Pods_GojekAssignmentTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -177,6 +185,7 @@
 			children = (
 				4CCFC34E28C486A5005BE7FB /* MainViewController.swift */,
 				4C60941028C4EC35001C0502 /* CardViewController.swift */,
+				4C496DBA2939BE8400C7DB41 /* GojekAppDependencyContainer.swift */,
 			);
 			path = iOSApp;
 			sourceTree = "<group>";
@@ -260,6 +269,8 @@
 			children = (
 				F2CB43870156A74A499F6692 /* Pods-GojekAssignment.debug.xcconfig */,
 				BEFE0598444241D346F9E1BF /* Pods-GojekAssignment.release.xcconfig */,
+				02FFBBDC88043125D0DD004D /* Pods-GojekAssignmentTests.debug.xcconfig */,
+				2506DCF8E16877803E2E8075 /* Pods-GojekAssignmentTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -271,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4CBEE0102938BCBC00630B43 /* Build configuration list for PBXNativeTarget "GojekAssignmentTests" */;
 			buildPhases = (
+				A5EE2E74396265CB935307EA /* [CP] Check Pods Manifest.lock */,
 				4CBEE0042938BCBC00630B43 /* Sources */,
 				4CBEE0052938BCBC00630B43 /* Frameworks */,
 				4CBEE0062938BCBC00630B43 /* Resources */,
+				2BF7DF98920C2855A81CE9BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +376,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2BF7DF98920C2855A81CE9BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GojekAssignmentTests/Pods-GojekAssignmentTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GojekAssignmentTests/Pods-GojekAssignmentTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GojekAssignmentTests/Pods-GojekAssignmentTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		40443EDC17EE1D1F9776F157 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -378,6 +408,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GojekAssignment/Pods-GojekAssignment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5EE2E74396265CB935307EA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GojekAssignmentTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D998AD00A669C5E33528CB4B /* [CP] Check Pods Manifest.lock */ = {
@@ -439,6 +491,7 @@
 				4CA7BEAA28C6435800100CDF /* Name.swift in Sources */,
 				4CA7BEB028C643D000100CDF /* Street.swift in Sources */,
 				4CCFC34F28C486A5005BE7FB /* MainViewController.swift in Sources */,
+				4C496DBB2939BE8400C7DB41 /* GojekAppDependencyContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,6 +527,7 @@
 /* Begin XCBuildConfiguration section */
 		4CBEE00E2938BCBC00630B43 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02FFBBDC88043125D0DD004D /* Pods-GojekAssignmentTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -493,6 +547,7 @@
 		};
 		4CBEE00F2938BCBC00630B43 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2506DCF8E16877803E2E8075 /* Pods-GojekAssignmentTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

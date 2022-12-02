@@ -1,7 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-GojekAssignment/Pods-GojekAssignment-frameworks.sh
-${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework
-${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework
-${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
-${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework
-${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework
-${BUILT_PRODUCTS_DIR}/pop/pop.framework
+${BUILT_PRODUCTS_DIR}/Koloda-iOS15.5/Koloda.framework
+${BUILT_PRODUCTS_DIR}/ReachabilitySwift-iOS15.5/Reachability.framework
+${BUILT_PRODUCTS_DIR}/RxCocoa-iOS15.5/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxRelay-iOS15.5/RxRelay.framework
+${BUILT_PRODUCTS_DIR}/RxSwift-iOS15.5/RxSwift.framework
+${BUILT_PRODUCTS_DIR}/pop-iOS15.5/pop.framework
